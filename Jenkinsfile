@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Считываем оригинальный yml
-                    def original = readFile 'browserstack.yml'
+                    def original = readFile 'robot-browserstack/browserstack.yml'
 
                     // Заменяем userName и accessKey
                     def updated = original
