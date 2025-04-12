@@ -32,7 +32,10 @@ pipeline {
                         // Создаем виртуальное окружение
                         sh 'python3 -m venv env'
                         sh 'source env/bin/activate && pip3 install -r requirements.txt'
-                        sh 'browserstack-sdk robot ./tests/test.robot'
+                        sh '''
+                            source env/bin/activate
+                            browserstack-sdk robot ./tests/test.robot
+                        '''
                     }
                 }
             }
