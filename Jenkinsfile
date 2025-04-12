@@ -35,7 +35,7 @@ pipeline {
                             sh 'source env/bin/activate && pip3 install -r requirements.txt'
                             sh '''
                                 source env/bin/activate
-                                "env/bin/browserstack-sdk" robot ./tests/test.robot
+                                browserstack-sdk robot ./tests/test.robot
                             '''
                         }
                     }
