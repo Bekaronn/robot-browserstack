@@ -1,0 +1,29 @@
+userName: userName
+accessKey: accessKey
+
+projectName: Wikipedia test 
+buildName: browserstack build 
+buildIdentifier: '#${BUILD_NUMBER}' # Supports strings along with either/both ${expression}
+
+platforms:
+  - os: OS X
+    osVersion: Big Sur
+    browserName: Safari
+    browserVersion: latest
+  - os: Windows
+    osVersion: 10
+    browserName: Chrome
+    browserVersion: latest
+  - os: Windows
+    osVersion: 10
+    browserName: Firefox
+    browserVersion: latest
+
+parallelsPerPlatform: 1
+browserstackLocal: true
+
+source: robot-browserstack:sample-sdk:v1.0
+
+debug: false # <boolean> # Set to true if you need screenshots for every selenium command ran
+networkLogs: false # <boolean> Set to true to enable HAR logs capturing
+consoleLogs: errors # <string> Remote browser's console debug levels to be printed (Default: errors)
