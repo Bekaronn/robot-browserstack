@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        BROWSERSTACK_USERNAME = credentials('BROWSERSTACK_USERNAME') // Jenkins credentials ID
-        BROWSERSTACK_ACCESS_KEY = credentials('BROWSERSTACK_ACCESS_KEY')
+        BROWSERSTACK_USERNAME = credentials('bekarysmyrzakul_t7ThIs') // Jenkins credentials ID
+        BROWSERSTACK_ACCESS_KEY = credentials('gyfyCcnLaawMWejMQZHW')
     }
 
     stages {
