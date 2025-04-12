@@ -27,11 +27,13 @@ pipeline {
         stage('Run Robot Tests') {
             steps {
                 script {
-                    cd 'browserstack-sdk'
-                    // Create virtual environment
-                    sh 'python3 -m venv env'
-                    sh 'source env/bin/activate && pip3 install -r requirements.txt'
-                    sh 'browserstack-sdk robot ./tests/test.robot'
+                    // Изменяем рабочую директорию перед выполнением команд
+                    dir('browserstack-sdk') {
+                        // Создаем виртуальное окружение
+                        sh 'python3 -m venv env'
+                        sh 'source env/bin/activate && pip3 install -r requirements.txt'
+                        sh 'browserstack-sdk robot ./tests/test.robot'
+                    }
                 }
             }
         }
