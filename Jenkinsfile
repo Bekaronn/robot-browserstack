@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     // Изменяем рабочую директорию перед выполнением команд
-                    dir('browserstack-sdk') {
+                    dir('robot-browserstack') {
                         // Создаем виртуальное окружение
                         sh 'python3 -m venv env'
                         sh 'source env/bin/activate && pip3 install -r requirements.txt'
