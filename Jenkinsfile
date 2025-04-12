@@ -26,7 +26,7 @@ pipeline {
 
         stage('Run Robot Tests') {
             steps {
-                sh 'robot tests/'  // или твоя команда запуска
+                sh 'browserstack-sdk robot ./robot-browserstack/tests/test.robot'
             }
         }
     }
