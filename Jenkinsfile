@@ -26,7 +26,13 @@ pipeline {
 
         stage('Run Robot Tests') {
             steps {
-                sh 'browserstack-sdk robot ./robot-browserstack/tests/test.robot'
+                script {
+                    cd 'browserstack-sdk'
+                    // Create virtual environment
+                    sh 'python3 -m venv env'
+                    sh 'source env/bin/activate && pip3 install -r requirements.txt'
+                    sh 'browserstack-sdk robot ./tests/test.robot'
+                }
             }
         }
     }
